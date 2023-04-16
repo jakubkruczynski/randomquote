@@ -1,0 +1,42 @@
+{% extends '_base.html' %}
+
+{% block title %}Quote Display{% endblock %}
+
+{% block content %}
+    {% if quote %}
+    <div class="container">
+
+       <h1>Inspirational Quotes</h1>
+      <div class="quote-container">
+        <div class="quote-display">{{ quote.text }}</div>
+        <div class="author">- {{ quote.author }}</div>
+        <div class="main_page_buttons">
+            <button class="refresh-btn" onclick="location.reload();">Refresh</button>
+
+        {% if user.is_authenticated %}
+            <form action="{% url 'toggle_favourite' quote.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="fav-btn">Add to Favourites</button>
+            </form>
+        {% endif %}
+    {% else %}
+        <p>No quotes available.</p>
+    {% endif %}
+        </div>
+
+      </div>
+        <div class="messages">
+    {% for message in messages %}
+    <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+    {% endfor %}
+</div>
+    {% if user.is_authenticated %}
+        <a class="page-btn" href="{% url 'account_logout' %}" class="logout-link">Log out</a>
+        <a class="page-btn" href="{% url 'favourite_quotes' %}" class="favourites-link">Your saved favourites</a>
+    {% else %}
+        <a class="page-btn" href="{% url 'account_login' %}" class="login-link">Log in</a>
+        <a class="page-btn" href="{% url 'account_signup' %}" class="signup-link">Sign up</a>
+    {% endif %}
+
+    </div>
+{% endblock %}

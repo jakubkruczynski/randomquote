@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+    <div class="container-form">
+                <a class="back-link" href="{% url 'random_quote' %}">&laquo; back to quotes</a>
+
+        <h1>Sign Up</h1>
+        <form method="post" class="signup-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a class="page-btn" href="{% url 'account_login' %}">Log in</a></p>
+    </div>
+{% endblock %}

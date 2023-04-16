@@ -1,3 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+.back-link {
+    text-align: left;
+    font-size: 14px;
+}
+
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 40%;
+    padding: 64px 16px;
+  margin: 50px auto 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.messages div {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #28a745;
+    font-decoration: bold;
+}
+
+.container-form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 25%;
+    padding: 32px 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+a {
+  text-decoration: underline;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #3498db;
+}
+
+
 h1 {
-color: blue;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Main quote display */
+.quote-display {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.quote-container {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+}
+.author {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.main_page_buttons {
+  display: flex;
+  justify-content: center;
+
+}
+
+/* Favorite quotes with pagination */
+
+.favourite-quote {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+}
+.quote {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+
+
+
+.page-btn {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    padding: 8px 16px;
+  margin: 0 auto;
+  margin-top: 30px;
+
+
+}
+
+.page-btn:hover {
+    text-decoration: underline;
+}
+
+
+/* Login and Sign up forms */
+.login-form, .signup-form {
+    width: 100%;
+  align-self: center;
+
+}
+
+
+.container-form p {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+
+
+
+
+
+
+/* For medium devices */
+
+
+
+/* For even smaller devices */
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 60%;
+  }
+  .container-form {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 70%;
+  }
+  .container-form {
+    width: 40%;
+  }
+}
+/* For smaller devices */
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+  .container-form {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    width: 95%;
+  }
+  .container-form {
+    width: 95%;
+  }
 }

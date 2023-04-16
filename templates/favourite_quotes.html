@@ -1,0 +1,45 @@
+{% extends '_base.html' %}
+
+{% block title %}Favourite Quotes{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Your saved favourites</h1>
+    <div class="favourites-container">
+        {% for favourite in favourites %}
+            <div class="favourite-quote">
+                <div class="quote">{{ favourite.quote.text }}</div>
+                <div class="author">- {{ favourite.quote.author }}</div>
+                <form action="{% url 'remove_favourite' favourite.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Remove</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if favourites.has_previous %}
+                <a class="page-btn" href="?page={{ favourites.previous_page_number }}">&laquo; previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ favourites.number }} of {{ favourites.paginator.num_pages }}.
+            </span>
+
+            {% if favourites.has_next %}
+                <a class="page-btn" href="?page={{ favourites.next_page_number }}">next &raquo;</a>
+            {% endif %}
+                <div class="messages">
+    {% for message in messages %}
+    <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+    {% endfor %}
+</div>
+        </span>
+
+            </div>
+    <a class="page-btn" href="{% url 'random_quote' %}">Back to main page</a>
+
+</div>
+{% endblock content %}
