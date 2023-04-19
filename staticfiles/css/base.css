@@ -24,7 +24,6 @@ body {
     text-align: center;
     width: 40%;
     padding: 64px 16px;
-  margin: 50px auto 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -221,9 +220,9 @@ input[type="password"] {
 
 @media only screen and (max-width: 576px) {
   .container {
-    width: 95%;
+    width: 90%;
   }
   .container-form {
-    width: 95%;
+    width: 90%;
   }
 }
